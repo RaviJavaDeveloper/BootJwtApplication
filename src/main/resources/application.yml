@@ -1,0 +1,15 @@
+server:
+  port: 5454
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/ravidb?useSSL=false
+    username: root
+    password: Ravi#143
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
