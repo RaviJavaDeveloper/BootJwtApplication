@@ -55,14 +55,14 @@ public class JwtConfig extends AuthorizationServerConfigurerAdapter {
     }
 
     @Bean
-    private JwtAccessTokenConverter accessTokenConverter() {
+    public JwtAccessTokenConverter accessTokenConverter() {
         JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
         converter.setSigningKey("raviteja");
         return converter;
     }
 
     @Bean
-    private WebResponseExceptionTranslator loggingExceptionTranslator() {
+    public WebResponseExceptionTranslator loggingExceptionTranslator() {
         return new DefaultWebResponseExceptionTranslator() {
             @Override
             public ResponseEntity<OAuth2Exception> translate(Exception e) throws Exception {
@@ -95,7 +95,7 @@ public class JwtConfig extends AuthorizationServerConfigurerAdapter {
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory().withClient("ravi").secret("123456")
                 .accessTokenValiditySeconds(3600).scopes("read", "write")
-                .authorizedGrantTypes("password", "refresh_token").resourceIds("resource");
+                .authorizedGrantTypes("password", "refresh_token").resourceIds("254365");
     }
 
     @Override
